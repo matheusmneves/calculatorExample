@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cashier Calculator</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="section" id="admin-section">
+            <h2>Admin</h2>
+                <div class="form-group">
+                    <label for="product">Product:</label>
+                    <input type="text" id="product">
+                </div>
+            <div class="form-group">
+                <label for="price">Price per unit:</label>
+                <input type="number" id="price">
+            </div>
+            <button onclick="addProduct()">Add Product</button>
+        </div>
+
+        <div class="section" id="checkout-section">
+            <h2>Checkout</h2>
+            <div class="form-group">
+                <label for="product-dropdown">Select Product:</label>
+                <select id="product-dropdown"></select>
+            </div>
+            <div class="unit-buttons">
+                <button onclick="addUnit(1)">1</button>
+                <button onclick="addUnit(2)">2</button>
+                <button onclick="addUnit(3)">3</button><br/>
+                <button onclick="addUnit(4)">4</button>
+                <button onclick="addUnit(5)">5</button>
+                <button onclick="addUnit(6)">6</button><br/>
+                <button onclick="addUnit(7)">7</button>
+                <button onclick="addUnit(8)">8</button>
+                <button onclick="addUnit(9)">9</button>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity">
+            </div>
+            <button onclick="addToCart()">Add to Cart</button>
+            <button onclick="startTransaction()">New transaction</button>
+        </div>
+
+        <div class="section" id="receipt-section">
+            <h2>Receipt</h2>
+            <table id="receipt-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price per unit</th>
+                        <th>Quantity</th>
+                        <th>Total Price</th>
+                    </tr>
+                </thead>
+                <tbody id="receipt-list"></tbody>
+                <tfoot id="receipt-foot">
+                    <tr>
+                        <td colspan="3" class="foot">Total Amount: </td>
+                        <td id="total-price"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="foot">Taxes: </td>
+                        <td id="amount-tax"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="foot">Amount Paid: </td>
+                        <td id="amount-paid"></td>
+                    </tr>
+                </tfoot>
+            </table>
+            <p id="total-amount"></p>
+            <p id="date-time"></p>
+            <button onclick="pay()">Pay</button>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
